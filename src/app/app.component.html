@@ -18,9 +18,10 @@
             <input type="text" placeholder="Insert a name" class="form-control" [(ngModel)]="selectedEmployee.name">
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Insert a country" class="form-control" [(ngModel)]="selectedEmployee.country">
+            <input type="text" placeholder="Insert a country" class="form-control mt-3" [(ngModel)]="selectedEmployee.country">
           </div>
           <button class="btn btn-primary mt-3" (click)="addOrEdit()">Submit</button>
+          <button class="btn btn-danger mt-3" *ngIf=" selectedEmployee.id !== 0" (click)="delete()"> delete </button>
         </div>
       </div>
     </div>

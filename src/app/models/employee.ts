@@ -1,5 +1,5 @@
 export class Employee {
-    id:number | undefined;
+    id:number = 0;
     name:string | undefined;
     country:string | undefined;
 };

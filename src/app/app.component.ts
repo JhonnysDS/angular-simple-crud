@@ -29,14 +29,22 @@ export class AppComponent {
   selectedEmployee: Employee = new Employee();
 
   addOrEdit(){
-    this.selectedEmployee.id = this.employeeArray.length + 1;
-    this.employeeArray.push(this.selectedEmployee);
-
+    if(this.selectedEmployee.id == 0){
+      this.selectedEmployee.id = this.employeeArray.length + 1;
+      this.employeeArray.push(this.selectedEmployee);
+    }
     this.selectedEmployee = new Employee();
   }
 
   openForEdit(employee: Employee){
     this.selectedEmployee = employee;
   }
+
+  delete(){
+    if (confirm('Do you want to delete this person?')){
+    this.employeeArray = this.employeeArray.filter(x => x != this.selectedEmployee);
+    this.selectedEmployee = new Employee();
+    }
+    }
   
 }
